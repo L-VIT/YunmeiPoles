@@ -1,27 +1,38 @@
+// slider
 const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: true,
-  
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+  direction: 'horizontal',
+  loop: true,
 
-        renderBullet: function (index, className) {
-            const dotsArr = ['загрузка в контейнер', 'фундаменты большие', 'загрузка в вагон ', 'упаковка опор ', 'образец опоры ', 'большая секция', 'Загрузка в автотранспорт ', 'Упаковка для болтов', 'Фабрика', 'Погрузка в контейнер', 'Сборка образца 500 кВ опоры ', 'Упаковка'];
-          return '<span class="' + className + '">' + dotsArr[index] + "</span>";
-        },
-      },
-  
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+
+    renderBullet: function (index, className) {
+      const dotsArr = ['загрузка в контейнер', 'фундаменты большие', 'загрузка в вагон ', 'упаковка опор ', 'образец опоры ', 'большая секция', 'Загрузка в автотранспорт ', 'Упаковка для болтов', 'Фабрика', 'Погрузка в контейнер', 'Сборка образца 500 кВ опоры ', 'Упаковка'];
+      return '<span class="' + className + '">' + dotsArr[index] + "</span>";
     },
+  },
 
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-    spaceBetween: 30,
-    speed: 1000,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+
+  spaceBetween: 30,
+  speed: 1000,
+});
+
+
+// mobile menu
+$(function(){
+  $('.mobile-menu-btn').on('click', function(){
+    $(this).toggleClass('mobile-menu-btn--active');
+    $('.mobile-menu').toggleClass('mobile-menu--open');
   });
+
+});
